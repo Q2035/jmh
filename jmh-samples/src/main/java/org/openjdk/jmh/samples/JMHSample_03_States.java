@@ -41,10 +41,12 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 public class JMHSample_03_States {
 
     /*
+     * 大多数情况下，我们在JMH运行时维护一些状态，因为JMH经常用于构建并发基准。
      * Most of the time, you need to maintain some state while the benchmark is
      * running. Since JMH is heavily used to build concurrent benchmarks, we
      * opted for an explicit notion of state-bearing objects.
      *
+     * 以下为两个状态类型。他们名字不重要，重要的是都用@State标注。这些对象将按需实例化，并在整个基准测试期间重用。
      * Below are two state objects. Their class names are not essential, it
      * matters they are marked with @State. These objects will be instantiated
      * on demand, and reused during the entire benchmark trial.
